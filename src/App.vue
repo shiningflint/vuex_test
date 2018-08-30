@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <my-component
-      :currentStatus="currentStatus"
-      :toggleStatus="toggleStatus"
-    />
+    <my-component/>
   </div>
 </template>
 
@@ -14,20 +11,6 @@ export default {
   name: 'app',
   components: {
     MyComponent
-  },
-  data () {
-    return  {
-      currentStatus: 'F A L S E'
-    }
-  },
-  methods: {
-    toggleStatus () {
-      if (this.currentStatus === 'F A L S E') {
-        this.currentStatus = 'T R U E'
-      } else {
-        this.currentStatus = 'F A L S E'
-      }
-    }
   }
 }
 </script>

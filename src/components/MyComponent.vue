@@ -10,9 +10,19 @@
 
 <script>
 export default {
-  props: {
-    currentStatus: String,
-    toggleStatus: Function
+  computed: {
+    currentStatus () {
+      return this.$store.state.currentStatus
+    }
+  },
+  methods: {
+    toggleStatus () {
+      if (this.$store.state.currentStatus === 'F A L S E') {
+        this.$store.dispatch('updateCurrentStatus', 'T R U E')
+      } else {
+        this.$store.dispatch('updateCurrentStatus', 'F A L S E')
+      }
+    }
   }
 }
 </script>
