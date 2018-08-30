@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <my-component
+      :currentStatus="currentStatus"
+      :toggleStatus="toggleStatus"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyComponent from './components/MyComponent.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    MyComponent
+  },
+  data () {
+    return  {
+      currentStatus: 'F A L S E'
+    }
+  },
+  methods: {
+    toggleStatus () {
+      if (this.currentStatus === 'F A L S E') {
+        this.currentStatus = 'T R U E'
+      } else {
+        this.currentStatus = 'F A L S E'
+      }
+    }
   }
 }
 </script>
